@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 334px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 6px;
+}
+
+.btn {
+  height: 32px;
+}
