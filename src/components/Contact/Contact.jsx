@@ -1,12 +1,15 @@
 import css from './Contact.module.css';
 import { IoPersonSharp } from 'react-icons/io5';
 import { FaPhoneAlt } from 'react-icons/fa';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import DeleteModal from '../DeleteModal/DeleteModal';
+import Modal from 'react-modal';
 
 export default function Contact({ contact, contact: { name, number } }) {
   const [modalIsOpen, setIsOpen] = useState(false);
-
+  useEffect(() => {
+    Modal.setAppElement('#root');
+  }, []);
   const handleDelete = () => setIsOpen(true);
 
   function closeModal() {

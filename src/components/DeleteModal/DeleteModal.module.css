@@ -1,0 +1,85 @@
+.Modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  background-color: var(--secondary-text-color);
+  padding: 32px;
+}
+
+.Overlay {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(25 26 28 / 75%);
+}
+
+.icon {
+  color: var(--secondary-color);
+  display: block;
+  margin: auto;
+}
+
+.title {
+  text-align: center;
+  /* color: var(--accent-color); */
+}
+
+.text {
+  display: block;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.span {
+  color: var(--secondary-color);
+  font-size: 20px;
+  text-transform: uppercase;
+  /* border: 1px solid var(--secondary-color); */
+}
+
+.btn {
+  padding: 8px 12px;
+  text-decoration: none;
+  color: var(--secondary-text-color);
+
+  border-radius: 6px;
+  border: transparent;
+}
+
+.btn:hover,
+.btn:focus {
+  cursor: pointer;
+  box-shadow: var(--main-box-shadow);
+}
+
+.btnDelete {
+  composes: btn;
+  background-color: var(--accent-color);
+}
+
+.btnDelete:hover,
+.btnDelete:focus {
+  background-color: var(--accent-color-dark);
+}
+
+.btnCancel {
+  composes: btn;
+  background-color: grey;
+}
+
+.btnCancel:hover,
+.btnCancel:focus {
+  background-color: #6d6d6d;
+}

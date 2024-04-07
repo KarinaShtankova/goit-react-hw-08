@@ -1,0 +1,19 @@
+.nav {
+  display: flex;
+  gap: 16px;
+}
+
+.link {
+  color: var(--main-text-color);
+  text-decoration: none;
+}
+
+.link:hover,
+.link:focus {
+  color: var(--secondary-color);
+}
+
+.isActive {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
