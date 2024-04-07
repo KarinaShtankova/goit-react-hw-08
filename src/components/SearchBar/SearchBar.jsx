@@ -1,6 +1,7 @@
 import { useId } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeFilter, selectNameFilter } from '../../redux/filtersSlice';
+import { changeFilter } from '../../redux/filters/slice';
+import { selectNameFilter } from '../../redux/filters/selectors';
 
 import css from './SearchBar.module.css';
 
@@ -11,7 +12,7 @@ export default function SearchBar() {
 
   return (
     <div className={css.container}>
-      <label htmlFor={searchId}>Find contacts by name</label>
+      <label htmlFor={searchId}>Find contacts by name or by number</label>
       <input
         className={css.input}
         type="text"
