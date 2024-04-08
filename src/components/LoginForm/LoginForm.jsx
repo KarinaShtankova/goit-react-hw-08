@@ -12,13 +12,15 @@ export default function LoginForm() {
     email: '',
   };
 
-
-    const successLoggedIn  = ({user}) => {
+  const successLoggedIn = ({ user }) => {
     toast.success(`${user.name} your account successfully LoggedIn!`);
   };
 
   const handleSubmit = (values, actions) => {
-    dispatch(logIn(values)).unwrap().then(successLoggedIn).catch(toast.error("Oops! Something went wrong. Please try again"));
+    dispatch(logIn(values))
+      .unwrap()
+      .then(successLoggedIn)
+      .catch(toast.error('Oops! Something went wrong. Please try again'));
     actions.resetForm();
   };
 
@@ -27,13 +29,15 @@ export default function LoginForm() {
       <Form className={css.form} autoComplete="off">
         <label className={css.label}>
           Email
-          <Field type="email" name="email" />
+          <Field className={css.input} type="email" name="email" />
         </label>
         <label className={css.label}>
           Password
-          <Field type="password" name="password" />
+          <Field className={css.input} type="password" name="password" />
         </label>
-        <button type="submit">Login</button>
+        <button className={css.btn} type="submit">
+          Login
+        </button>
       </Form>
     </Formik>
   );

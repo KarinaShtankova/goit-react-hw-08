@@ -5,5 +5,5 @@
   background-color: var(--secondary-text-color);
   align-items: center;
   margin-bottom: 32px;
-  border-bottom: 1px solid var(--main-text-color);
+  border-bottom: 1px solid var(--light-color);
 }

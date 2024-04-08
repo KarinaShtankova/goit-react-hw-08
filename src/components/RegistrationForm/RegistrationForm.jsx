@@ -13,13 +13,15 @@ export default function RegistrationForm() {
     password: '',
   };
 
-  const successRegister  = ({user}) => {
+  const successRegister = ({ user }) => {
     toast.success(`${user.name} your account successfully created!`);
   };
 
-
   const handleSubmit = (values, actions) => {
-    dispatch(register(values)).unwrap().then(successRegister).catch(toast.error("Oops! Something went wrong. Please try again"));
+    dispatch(register(values))
+      .unwrap()
+      .then(successRegister)
+      .catch(toast.error('Oops! Something went wrong. Please try again'));
     actions.resetForm();
   };
 
@@ -28,17 +30,19 @@ export default function RegistrationForm() {
       <Form className={css.form} autoComplete="off">
         <label className={css.label}>
           Username
-          <Field type="text" name="name" />
+          <Field className={css.input} type="text" name="name" />
         </label>
         <label className={css.label}>
           Email
-          <Field type="email" name="email" />
+          <Field className={css.input} type="email" name="email" />
         </label>
         <label className={css.label}>
           Password
-          <Field type="password" name="password" />
+          <Field className={css.input} type="password" name="password" />
         </label>
-        <button type="submit">Register</button>
+        <button className={css.btn} type="submit">
+          Register
+        </button>
       </Form>
     </Formik>
   );

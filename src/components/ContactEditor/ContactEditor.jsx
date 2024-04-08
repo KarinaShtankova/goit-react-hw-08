@@ -49,18 +49,27 @@ export default function ContactEditor({
       onSubmit={handleSubmit}
       validationSchema={ContactSchema}
     >
-      <Form>
-        <label>
-          <IoPersonSharp size="20" />
-          <Field type="text" name="name" />
-        </label>{' '}
-        <ErrorMessage className={css.error} name="name" component="span" />
-        <label>
-          <FaPhoneAlt size="20" />
-          <Field type="tel" name="number" />
-        </label>{' '}
-        <ErrorMessage className={css.error} name="number" component="span" />
-        <button type="submit">Save</button>
+      <Form className={css.form}>
+        <div className={css.container}>
+          <label className={css.label}>
+            <IoPersonSharp className={css.icon} size="20" />
+            <Field className={css.input} type="text" name="name" />
+          </label>
+          <ErrorMessage className={css.error} name="name" component="span" />
+          <label className={css.label}>
+            <FaPhoneAlt className={css.icon} size="20" />
+            <Field className={css.input} type="tel" name="number" />
+          </label>
+          <ErrorMessage className={css.error} name="number" component="span" />
+        </div>
+        <div className={css.btnBox}>
+          <button className={css.btn} type="submit">
+            Save
+          </button>
+          <button className={css.btn} type="button" onClick={onClose}>
+            Cancel
+          </button>
+        </div>
       </Form>
     </Formik>
   );

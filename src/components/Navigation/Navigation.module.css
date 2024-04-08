@@ -10,10 +10,10 @@
 
 .link:hover,
 .link:focus {
-  color: var(--secondary-color);
+  color: var(--main-color);
 }
 
 .isActive {
-  color: var(--secondary-color);
+  color: var(--main-color);
   text-decoration: underline;
 }

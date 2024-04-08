@@ -1,6 +1,8 @@
 import css from './Contact.module.css';
 import { IoPersonSharp } from 'react-icons/io5';
 import { FaPhoneAlt } from 'react-icons/fa';
+import { PiPencilSimpleLine } from 'react-icons/pi';
+import { GoTrash } from 'react-icons/go';
 import { useEffect, useState } from 'react';
 import DeleteModal from '../DeleteModal/DeleteModal';
 import Modal from 'react-modal';
@@ -14,19 +16,15 @@ export default function Contact({ contact, contact: { name, number } }) {
     Modal.setAppElement('#root');
   }, []);
 
-  const handleClick = () => setIsEditing(true);
+  const handleEdit = () => setIsEditing(true);
   const handleClose = () => setIsEditing(false);
-  const handleDelete = () => {
-    setIsOpen(true);
-    setIsEditing(false);
-  };
-
+  const handleDelete = () => setIsOpen(true);
   function closeModal() {
     setIsOpen(false);
   }
 
   return (
-    <div className={css.container} onClick={handleClick}>
+    <div className={css.container}>
       {isEditing ? (
         <ContactEditor contact={contact} onClose={handleClose} />
       ) : (
@@ -41,9 +39,22 @@ export default function Contact({ contact, contact: { name, number } }) {
               <p>{number}</p>
             </li>
           </ul>
-          <button className={css.btn} onClick={handleDelete}>
-            Delete
-          </button>
+          <div className={css.btnBox}>
+            <button
+              className={css.btnEdit}
+              onClick={handleEdit}
+              aria-label="Edit contact"
+            >
+              <PiPencilSimpleLine size="20" />
+            </button>
+            <button
+              className={css.btnDelete}
+              onClick={handleDelete}
+              aria-label="Delete contact"
+            >
+              <GoTrash size="20" />
+            </button>
+          </div>
         </>
       )}
 

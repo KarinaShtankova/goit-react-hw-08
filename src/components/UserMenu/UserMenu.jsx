@@ -8,8 +8,9 @@ export default function UserMenu() {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
   const handleClick = () => {
-    dispatch(logOut()).unwrap().then(toast.success('Your successfully LoggedOut!')
-);
+    dispatch(logOut())
+      .unwrap()
+      .then(toast.success('Your successfully LoggedOut!'));
   };
 
   return (

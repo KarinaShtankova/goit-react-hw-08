@@ -2,7 +2,7 @@
   margin-bottom: 15px;
   padding: 12px;
   width: 334px;
-  border: 1px solid black;
+  border: 1px solid var(--light-color);
   border-radius: 5px;
 }
 
@@ -14,9 +14,11 @@
   display: block;
   padding: 4px 2px;
   height: 32px;
-  width: 300px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
+  border: 1px solid var(--light-color);
+  border-radius: 4px;
 }
 
 .btn {
@@ -24,6 +26,18 @@
   margin-top: 12px;
   margin-right: auto;
   margin-left: auto;
+  padding: 8px 12px;
+  color: var(--secondary-text-color);
+  background-color: var(--main-color);
+  border-radius: 6px;
+  border: transparent;
+}
+
+.btn:hover,
+.btn:focus {
+  cursor: pointer;
+  background-color: #289b75;
+  box-shadow: var(--main-box-shadow);
 }
 
 .error {

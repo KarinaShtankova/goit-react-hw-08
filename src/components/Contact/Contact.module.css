@@ -3,9 +3,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 9px;
-  border: 1px solid black;
-  border-radius: 5px;
+  border: 1px solid var(--light-color);
+  border-radius: 4px;
+
   width: 334px;
+  min-height: 80px;
 }
 
 .item {
@@ -18,6 +20,40 @@
   margin-bottom: 6px;
 }
 
+.btnBox {
+  display: flex;
+  gap: 4px;
+}
+
 .btn {
+  display: flex;
+  align-items: center;
+
   height: 32px;
+  background-color: transparent;
+  border-radius: 50%;
+  border: transparent;
+}
+
+.btn:hover,
+.btn:focus {
+  cursor: pointer;
+}
+
+.btnEdit {
+  composes: btn;
+}
+
+.btnEdit:hover,
+.btnEdit:focus {
+  color: var(--main-color);
+}
+
+.btnDelete {
+  composes: btn;
+}
+
+.btnDelete:hover,
+.btnDelete:focus {
+  color: var(--accent-color);
 }
