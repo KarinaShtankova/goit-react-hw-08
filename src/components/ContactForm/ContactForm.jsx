@@ -2,9 +2,10 @@ import css from './ContactForm.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useDispatch } from 'react-redux';
 
-import { useId } from 'react';
+import { useId} from 'react';
 import * as Yup from 'yup';
 import { addContact } from '../../redux/contacts/operations';
+import toast from 'react-hot-toast';
 
 const initialValues = {
   contactName: '',
@@ -23,10 +24,16 @@ const ContactSchema = Yup.object().shape({
 });
 
 export default function ContactForm() {
+
+
   const nameFieldId = useId();
   const numberFieldId = useId();
-
   const dispatch = useDispatch();
+
+  const successAdded = contact => {
+    toast.success(`${contact.name} successfully added!`);
+  };
+
 
   const handleSubmit = (values, actions) => {
     dispatch(
@@ -34,7 +41,7 @@ export default function ContactForm() {
         name: values.contactName,
         number: values.number,
       })
-    );
+    ).unwrap().then(successAdded);
 
     actions.resetForm();
   };

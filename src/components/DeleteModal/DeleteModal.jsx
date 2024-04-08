@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import { FaPersonCircleExclamation } from 'react-icons/fa6';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from '../../redux/contacts/operations';
+import toast from 'react-hot-toast';
 
 export default function DeleteModal({
   isOpen,
@@ -10,7 +11,7 @@ export default function DeleteModal({
   contact: { name, id },
 }) {
   const dispatch = useDispatch();
-  const handleDelete = () => dispatch(deleteContact(id));
+  const handleDelete = () => dispatch(deleteContact(id)).unwrap().then( toast.success(`${name} successfully deleted!`));
 
   return (
     <div>
@@ -31,7 +32,7 @@ export default function DeleteModal({
           <button className={css.btnCancel} onClick={onRequestClose}>
             Cancel
           </button>
-          <button className={css.btnDelete} onClick={handleDelete && onRequestClose}>
+          <button className={css.btnDelete} onClick={handleDelete}>
             Delete
           </button>
         </div>
