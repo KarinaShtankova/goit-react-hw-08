@@ -1,9 +1,19 @@
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 16px 32px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8px 16px;
+  width: 300px;
   background-color: var(--secondary-text-color);
   align-items: center;
   margin-bottom: 32px;
   border-bottom: 1px solid var(--light-color);
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    padding: 16px 32px;
+    width: 500px;
+  }
 }

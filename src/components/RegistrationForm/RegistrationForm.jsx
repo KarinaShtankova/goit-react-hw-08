@@ -18,10 +18,7 @@ export default function RegistrationForm() {
   };
 
   const handleSubmit = (values, actions) => {
-    dispatch(register(values))
-      .unwrap()
-      .then(successRegister)
-      .catch(toast.error('Oops! Something went wrong. Please try again'));
+    dispatch(register(values)).unwrap().then(successRegister);
     actions.resetForm();
   };
 

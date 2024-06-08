@@ -12,7 +12,9 @@ export default function SearchBar() {
 
   return (
     <div className={css.container}>
-      <label htmlFor={searchId}>Find contacts by name or by number</label>
+      <label className={css.label} htmlFor={searchId}>
+        Find contacts by name or by number
+      </label>
       <input
         className={css.input}
         type="text"

@@ -8,7 +8,7 @@ export default function RegisterPage() {
       <h2 className={css.title}>Register your account</h2>
       <RegistrationForm />
       <p className={css.text}>
-        Do you haven&apos;t an account?{' '}
+        Do you already have an account?
         <Link className={css.link} to="/login">
           Sign in
         </Link>

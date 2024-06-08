@@ -11,7 +11,10 @@ export default function DeleteModal({
   contact: { name, id },
 }) {
   const dispatch = useDispatch();
-  const handleDelete = () => dispatch(deleteContact(id)).unwrap().then( toast.success(`${name} successfully deleted!`));
+  const handleDelete = () =>
+    dispatch(deleteContact(id))
+      .unwrap()
+      .then(toast.success(`${name} successfully deleted!`));
 
   return (
     <div>
@@ -25,7 +28,7 @@ export default function DeleteModal({
         <FaPersonCircleExclamation className={css.icon} size={128} />
         <h2 className={css.title}>Are you sure?</h2>
         <b className={css.text}>
-          <span className={css.span}>{name} </span> will be delete immediately.{' '}
+          <span className={css.span}>{name} </span> will be delete immediately.
           <br /> You can&apos;t undo this action.
         </b>
         <div className={css.container}>

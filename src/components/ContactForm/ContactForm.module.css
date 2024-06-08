@@ -1,7 +1,7 @@
 .form {
   margin-bottom: 15px;
   padding: 12px;
-  width: 334px;
+  width: 264px;
   border: 1px solid var(--light-color);
   border-radius: 5px;
 }
@@ -43,4 +43,10 @@
 .error {
   font-size: 16px;
   color: var(--accent-color);
+}
+
+@media screen and (min-width: 768px) {
+  .form {
+    width: 334px;
+  }
 }

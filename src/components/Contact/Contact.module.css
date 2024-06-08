@@ -6,7 +6,7 @@
   border: 1px solid var(--light-color);
   border-radius: 4px;
 
-  width: 334px;
+  width: 264px;
   min-height: 80px;
 }
 
@@ -56,4 +56,10 @@
 .btnDelete:hover,
 .btnDelete:focus {
   color: var(--accent-color);
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 334px;
+  }
 }

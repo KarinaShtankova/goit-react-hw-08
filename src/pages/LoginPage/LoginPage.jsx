@@ -8,7 +8,7 @@ export default function LoginPage() {
       <h2 className={css.title}>Please Log In</h2>
       <LoginForm />
       <p className={css.text}>
-        Do you haven&apos;t an account?{' '}
+        Don&apos;t have an account?
         <Link className={css.link} to="/register">
           Sign up
         </Link>

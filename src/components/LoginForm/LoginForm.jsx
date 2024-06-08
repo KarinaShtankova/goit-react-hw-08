@@ -17,10 +17,7 @@ export default function LoginForm() {
   };
 
   const handleSubmit = (values, actions) => {
-    dispatch(logIn(values))
-      .unwrap()
-      .then(successLoggedIn)
-      .catch(toast.error('Oops! Something went wrong. Please try again'));
+    dispatch(logIn(values)).unwrap().then(successLoggedIn);
     actions.resetForm();
   };
 
